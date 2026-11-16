@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>尺码顾问 · Size Advisor</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="wrap">
+  <header class="head">
+    <h1>📐 尺码顾问</h1>
+    <p>输入身体数据，一次给出上装 / 裤装 / 鞋码推荐与国际换算</p>
+  </header>
+
+  <div class="layout">
+    <section class="card form-card">
+      <h2>身体数据</h2>
+      <div class="gender-row" id="genderRow">
+        <button class="g-btn active" data-g="male">👨 男士</button>
+        <button class="g-btn" data-g="female">👩 女士</button>
+      </div>
+
+      <label>身高 <output id="hOut">172</output> cm
+        <input id="height" type="range" min="145" max="200" value="172">
+      </label>
+      <label>体重 <output id="wOut">65</output> kg
+        <input id="weight" type="range" min="38" max="130" value="65">
+      </label>
+      <label>脚长（可选）<output id="fOut">--</output>
+        <input id="foot" type="range" min="0" max="300" value="0">
+        <small class="hint">0 表示不测量；脚后跟到最长脚趾的距离（mm）</small>
+      </label>
+
+      <h2>版型偏好</h2>
+      <div class="fit-row" id="fitRow">
+        <button class="fit-btn" data-fit="slim">修身</button>
+        <button class="fit-btn active" data-fit="regular">常规</button>
+        <button class="fit-btn" data-fit="loose">宽松</button>
+      </div>
+
+      <div class="bmi-box" id="bmiBox"></div>
+    </section>
+
+    <section class="results">
+      <div class="card hero-card">
+        <div class="hero-top">
+          <span>上装推荐尺码</span>
+          <span class="conf" id="confidence"></span>
+        </div>
+        <div class="hero-size" id="topSize">M</div>
+        <div class="intl-grid" id="intlGrid"></div>
+      </div>
+
+      <div class="card">
+        <h2>裤装推荐</h2>
+        <div class="pants-row" id="pantsRow"></div>
+        <p class="note" id="waistNote"></p>
+      </div>
+
+      <div class="card" id="shoeCard" hidden>
+        <h2>鞋码推荐</h2>
+        <div class="shoe-grid" id="shoeGrid"></div>
+      </div>
+
+      <div class="card tips-card">
+        <h2>穿搭建议</h2>
+        <ul id="tipsList"></ul>
+      </div>
+    </section>
+  </div>
+</main>
+
+<script src="size-engine.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
