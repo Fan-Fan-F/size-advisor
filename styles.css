@@ -1,0 +1,63 @@
+:root {
+  --bg: #eef2f7; --card: #fff; --ink: #172033; --muted: #64748b;
+  --accent: #2563eb; --accent2: #1d4ed8; --line: #e2e8f0;
+  --good: #059669; --warn: #d97706;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--ink); }
+.wrap { max-width: 1000px; margin: 0 auto; padding: 32px 20px 60px; }
+.head { text-align: center; margin-bottom: 26px; }
+.head h1 { font-size: 26px; margin-bottom: 6px; }
+.head p { color: var(--muted); font-size: 14px; }
+
+.layout { display: grid; grid-template-columns: 380px 1fr; gap: 20px; align-items: start; }
+.card { background: var(--card); border-radius: 16px; padding: 22px; box-shadow: 0 4px 16px rgba(23,32,51,.06); margin-bottom: 16px; }
+.card h2 { font-size: 15px; margin-bottom: 14px; color: var(--muted); }
+
+/* 表单 */
+.gender-row, .fit-row { display: flex; gap: 8px; margin-bottom: 18px; }
+.g-btn, .fit-btn {
+  flex: 1; height: 44px; border: 1.5px solid var(--line); border-radius: 11px;
+  background: #fff; font-size: 14px; cursor: pointer; transition: all .14s;
+}
+.g-btn.active, .fit-btn.active { border-color: var(--accent); background: #eff6ff; color: var(--accent); font-weight: 700; }
+
+label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 18px; }
+output { color: var(--accent); font-weight: 800; }
+input[type="range"] { width: 100%; margin-top: 10px; accent-color: var(--accent); }
+.hint { display: block; font-weight: 400; color: var(--muted); font-size: 11px; margin-top: 6px; }
+
+.bmi-box { border-radius: 12px; padding: 14px 16px; background: #f1f5f9; font-size: 13px; display: flex; justify-content: space-between; align-items: center; }
+.bmi-box .bmi-num { font-size: 22px; font-weight: 800; }
+.bmi-box .bmi-label { font-size: 12px; padding: 3px 10px; border-radius: 999px; color: #fff; }
+.bmi-box .b0 { background: #38bdf8; } .bmi-box .b1 { background: var(--good); }
+.bmi-box .b2 { background: var(--warn); } .bmi-box .b3 { background: #dc2626; }
+
+/* 结果 */
+.hero-card { background: linear-gradient(135deg, #172033, #2b3a5e); color: #fff; }
+.hero-top { display: flex; justify-content: space-between; font-size: 13px; color: #94a3b8; }
+.conf { background: rgba(255,255,255,.12); padding: 3px 10px; border-radius: 999px; font-size: 11px; }
+.hero-size { font-size: 72px; font-weight: 800; text-align: center; padding: 16px 0; letter-spacing: 2px; }
+.intl-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.intl-cell { background: rgba(255,255,255,.08); border-radius: 10px; padding: 10px; text-align: center; }
+.intl-cell b { display: block; font-size: 11px; color: #94a3b8; font-weight: 400; margin-bottom: 4px; }
+.intl-cell span { font-size: 15px; font-weight: 700; }
+
+.pants-row { display: flex; gap: 12px; }
+.pants-cell { flex: 1; background: #f1f5f9; border-radius: 12px; padding: 14px; text-align: center; }
+.pants-cell b { display: block; font-size: 11px; color: var(--muted); font-weight: 400; margin-bottom: 4px; }
+.pants-cell span { font-size: 20px; font-weight: 800; color: var(--accent); }
+.note { font-size: 12px; color: var(--muted); margin-top: 12px; }
+
+.shoe-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.shoe-cell { background: #f1f5f9; border-radius: 12px; padding: 12px; text-align: center; }
+.shoe-cell b { display: block; font-size: 11px; color: var(--muted); font-weight: 400; margin-bottom: 3px; }
+.shoe-cell span { font-size: 17px; font-weight: 800; }
+
+.tips-card ul { padding-left: 18px; }
+.tips-card li { font-size: 13px; color: var(--muted); line-height: 1.9; }
+
+@media (max-width: 760px) {
+  .layout { grid-template-columns: 1fr; }
+  .hero-size { font-size: 56px; }
+}
